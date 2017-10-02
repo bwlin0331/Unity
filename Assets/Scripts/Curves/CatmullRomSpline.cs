@@ -119,7 +119,7 @@ public class CatmullRomSpline : MonoBehaviour, ICurve {
             if (calls == velocity) {
                 currentControlPoint = currentControlPoint + 1 > controlPoints.Length - 1 ? 0 : currentControlPoint + 1;
                 calls = 0;
-            } else calls++;
+            } else calls++;-
         }
         return this.transform.TransformPoint(point);
     }
