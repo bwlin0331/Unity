@@ -27,19 +27,27 @@ public class AgentBehaviour : MonoBehaviour {
 	void FixedUpdate()
 	{
 		//Collider[] hitColliders = Physics.OverlapSphere (transform.position, 10.0f);
-		Vector3 fwd = transform.TransformDirection (Vector3.forward);
+		float distance = Vector3.Distance(this.transform.position, destination);
+		if (distance > 10.0f) {
+			agent.isStopped = false;
+			return;
+		}
+		Vector3 fwd = transform.TransformDirection(Vector3.forward);
+		Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1.0f);
 		int i = 0;
-		/*while (i < hitColliders.Length) {
-			if (hitColliders [i].gameObject.CompareTag ("Player") && Vector3.Distance (transform.position, destination) < 2.8f) {
+		while (i < hitColliders.Length) {
+			float angle = Vector3.Dot (fwd, (hitColliders [i].transform.position-this.transform.position).normalized);
+			float degree = Mathf.Acos (angle) * Mathf.Rad2Deg;
+			if (degree < -30.0f || degree > 30.0f) {
+				i++;
+				continue;
+			}
+			if (hitColliders [i].gameObject.CompareTag ("Player")) {
 				agent.isStopped = true;
 				return;
 			}
 			i++;
-		}*/
-		if (Physics.SphereCast (transform.position, 12.0f, fwd, out hit, 0.00f) && hit.collider.gameObject.CompareTag ("Player")) {
-			agent.isStopped = true;
-			return;
-		} 
+		}
 		agent.isStopped = false;
 	}
 }
