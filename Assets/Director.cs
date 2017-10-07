@@ -17,8 +17,10 @@ public class Director : MonoBehaviour {
 			RaycastHit hit;
 			Ray ray = camera.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
-				if (hit.transform.tag.CompareTo("obstacle") == 0) {
-					obstacle = hit.transform.GetComponent<Rigidbody>();
+				if (hit.transform.tag.CompareTo ("obstacle") == 0) {
+					obstacle = hit.transform.GetComponent<Rigidbody> ();
+				} else if (hit.transform.CompareTag ("Player")) {
+					hit.transform.GetComponent<NavMeshAgent> ().enabled = !hit.transform.GetComponent<NavMeshAgent> ().enabled;
 				} else {
 					foreach (Transform child in transform) {
 						child.GetComponent<NavMeshAgent> ().SetDestination (hit.point);
