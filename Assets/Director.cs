@@ -6,6 +6,7 @@ public class Director : MonoBehaviour {
 	public Camera camera;
 	public float speed;
 	public Rigidbody obstacle;
+	public Transform maincamera;
 	// Use this for initialization
 	void Start () {
 		
@@ -29,7 +30,15 @@ public class Director : MonoBehaviour {
 				}
 			}
 		}
-
+		if (Input.GetButtonDown("Fire2") ){
+			RaycastHit hit;
+			Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+			if (Physics.Raycast (ray, out hit)) {
+				if (hit.transform.CompareTag ("Player")) {
+					maincamera.GetComponent<IOCamera> ().player = hit.transform;
+				} 
+			}
+		}
 
 	}
 

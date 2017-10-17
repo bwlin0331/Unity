@@ -28,7 +28,10 @@ public class AgentBehaviour : MonoBehaviour {
 	{
 		//Collider[] hitColliders = Physics.OverlapSphere (transform.position, 10.0f);
 		float distance = Vector3.Distance(this.transform.position, destination);
-		if (distance > 10.0f) {
+		if (transform.name.CompareTo ("Agent") == 0) {
+			Debug.Log (agent.velocity);
+		}
+		if (distance > 5.0f) {
 			agent.isStopped = false;
 			return;
 		}
@@ -38,7 +41,7 @@ public class AgentBehaviour : MonoBehaviour {
 		while (i < hitColliders.Length) {
 			float angle = Vector3.Dot (fwd, (hitColliders [i].transform.position-this.transform.position).normalized);
 			float degree = Mathf.Acos (angle) * Mathf.Rad2Deg;
-			if (degree < -30.0f || degree > 30.0f) {
+			if (degree < -45.0f || degree > 45.0f) {
 				i++;
 				continue;
 			}

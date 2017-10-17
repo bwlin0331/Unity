@@ -16,12 +16,13 @@ public class LocomotionClampedSMB : StateMachineBehaviour
 			return;
 		}
 
-		float horizontal = Input.GetAxis ("Horizontal");
+		float horizontal = Input.GetAxis ("Horizontal2");
 		float vertical = 0.0f;
 
 		Vector2 input = new Vector2(horizontal, vertical).normalized;
 
 		animator.SetFloat(m_HashHorizontalPara, input.x, m_Damping, Time.deltaTime);
 		animator.SetFloat(m_HashVerticalPara, input.y, m_Damping, Time.deltaTime);
+
 	}
 }
