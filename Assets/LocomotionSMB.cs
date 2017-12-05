@@ -26,8 +26,8 @@ public class LocomotionSMB : StateMachineBehaviour
 			
 		}
 
-		float horizontal = Input.GetAxis ("Horizontal2");
-		float vertical = Input.GetAxis ("Vertical2");
+		float horizontal = Input.GetAxis ("Horizontal");
+		float vertical = Input.GetAxis ("Vertical");
 		if(Input.GetKeyDown(KeyCode.LeftShift) == true){
 			if (blend < 0.01f) {
 				blend = 1.0f;
