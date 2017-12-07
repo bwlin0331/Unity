@@ -9,13 +9,16 @@ public class LocomotionSMB : StateMachineBehaviour
 	private readonly int m_blender = Animator.StringToHash("Blend");
 	private readonly int iJ = Animator.StringToHash("isJumping");
 	private readonly int iG = Animator.StringToHash("isGrab");
-	private readonly int iC = Animator.StringToHash("isClamped");
+	//private readonly int iC = Animator.StringToHash("isClamped");
+	private readonly int iCr = Animator.StringToHash("isCrouch");
 	private float blend = 0.0f;
+
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		if (Input.GetKeyDown (KeyCode.LeftControl) == true) {
-			animator.SetBool (iC, true);
+			bool temp = animator.GetBool (iCr);
+			animator.SetBool (iCr, !temp);
 			return;
 		}
 		if (Input.GetKeyDown ("space") == true) {
