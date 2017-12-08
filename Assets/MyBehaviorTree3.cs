@@ -119,7 +119,7 @@ public class MyBehaviorTree3 : MonoBehaviour {
 		Val<Vector3> m = Val.V (() => npcs[5].transform.position + npcs[5].transform.forward*2);
 		Val<Vector3> p = Val.V (() => player.transform.position);
 		Val<Vector3> g = Val.V (() => guard.transform.position);
-		Func<bool> next = () => (g.Value.x < 20); 
+		Func<bool> next = () => (g.Value.x < -93); 
 		Node trigger = new LeafAssert (next);
 		return new Sequence (new DecoratorForceStatus(RunStatus.Success, new Sequence(trigger, guard.GetComponent<BehaviorMecanim>().Node_RunTo(m),
 			new LeafWait(5000),
@@ -128,7 +128,8 @@ public class MyBehaviorTree3 : MonoBehaviour {
 			guard.GetComponent<BehaviorMecanim>().Node_StartInteraction(FullBodyBipedEffector.RightHand, grabber),
 			new LeafWait(5000),
 			guard.GetComponent<BehaviorMecanim>().Node_StopInteraction(FullBodyBipedEffector.RightHand))),
-			guard.GetComponent<BehaviorMecanim>().Node_RunTo(wanders[6].position));
+			new Sequence(guard.GetComponent<BehaviorMecanim>().Node_RunTo(wanders[6].position),
+				guard.GetComponent<BehaviorMecanim>().ST_PlayHandGesture("pointing", 3000)));
 	}
 	protected Node BuildTreeRoot()
 	{ 
