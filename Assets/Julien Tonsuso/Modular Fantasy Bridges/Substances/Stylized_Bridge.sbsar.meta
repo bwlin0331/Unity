@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: aed6cc8362ac1a549b62a9ed75c4fde3
-timeCreated: 1512505222
+timeCreated: 1512755446
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -122,12 +122,12 @@ SubstanceImporter:
     - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 1548332284
-    - shaderProp: _ParallaxMap
-      material: {instanceID: 0}
-      baseUID: 1548332278
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 1548332280
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 1548332278
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -252,12 +252,12 @@ SubstanceImporter:
     - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 481500188
-    - shaderProp: _ParallaxMap
-      material: {instanceID: 0}
-      baseUID: 417085161
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 481500184
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 417085161
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -410,12 +410,12 @@ SubstanceImporter:
     - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 369114998
-    - shaderProp: _ParallaxMap
-      material: {instanceID: 0}
-      baseUID: 309269891
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 369114994
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 309269891
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -554,12 +554,12 @@ SubstanceImporter:
     - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 3820247569
-    - shaderProp: _ParallaxMap
-      material: {instanceID: 0}
-      baseUID: 3889918180
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 3820247573
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 3889918180
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
