@@ -10,6 +10,8 @@ public class Dialogue : MonoBehaviour {
 
 	public GameObject npcText;
 	public Text changeText;
+	public Text questText;
+	public Text sideQuestText;
 
 	public int countNextDialogue = 0;
 
@@ -25,10 +27,12 @@ public class Dialogue : MonoBehaviour {
 				if (triggeringNpc.tag == "NPC1") {
 					if (countNextDialogue < 4) { 
 						changeText.text = "Hello hero! Follow me! A mother needs help!";
-
+						questText.text = "Active Quest: Follow Guard";
+						sideQuestText.text =  "Side Quest: Get Information";
 					}
 					if (countNextDialogue > 3) { 
 						changeText.text = "Follow me hero! I will lead the way!";
+
 					}
 				}
 				if (triggeringNpc.tag == "NPC2") {
@@ -39,12 +43,14 @@ public class Dialogue : MonoBehaviour {
 				}
 				if (triggeringNpc.tag == "NPC4") {
 					changeText.text = "I heard wolves love apples.";
+					sideQuestText.text =  "Side Quest: Find Apples";
 				}
 				if (triggeringNpc.tag == "NPC5") {
 					changeText.text = "I get apples every morning from the apple tree on the mountain.";
 				}
 				if (triggeringNpc.tag == "NPC6") {
 					changeText.text = "Please help me! My child was taken away by a pack of wolves! Please bring him back to me!";
+					questText.text = "Active Quest: Save Child";
 				}
 				if (triggeringNpc.tag == "NPC7") {
 					changeText.text = "I am a wizard! I love magic!";
@@ -53,6 +59,7 @@ public class Dialogue : MonoBehaviour {
 		} else {
 			npcText.SetActive (false);
 		}
+			
 	}
 
 	void OnTriggerEnter(Collider other){
